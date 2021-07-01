@@ -26,6 +26,7 @@ class Deck extends Component {
             cards: [...this.state.cards, card]
         })
     }
+    
     render () {
         return (
             <div className="Deck">
