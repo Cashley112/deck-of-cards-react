@@ -1,0 +1,12 @@
+.Deck h1 {
+    color: white;
+}
+.Deck button {
+    height: 3rem;
+    width: 10rem;
+    font-size: 1.25em;
+    font-weight: 700;
+    border-radius: 5%;
+    border: none;
+    background-color: white;
+}
