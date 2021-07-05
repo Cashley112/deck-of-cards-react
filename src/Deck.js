@@ -3,6 +3,8 @@ import './Deck.css';
 import Card from './Card';
 import axios from 'axios';
 
+const API_BASE_URL = 'https://deckofcardsapi.com/api/deck';
+
 class Deck extends Component {
     constructor(props) {
         super(props);
@@ -13,18 +15,25 @@ class Deck extends Component {
         this.dealCard = this.dealCard.bind(this);
     }
     async componentDidMount() {
-        let url = "https://deckofcardsapi.com/api/deck/new/shuffle";
+        let url = `${API_BASE_URL}/new/shuffle`;
         let response = await axios.get(url);
         let deckId = response.data.deck_id;
         this.setState({ deckId  })
     }
     async dealCard() {
-        let url = `https://deckofcardsapi.com/api/deck/${this.state.deckId}/draw`;
-        let response = await axios.get(url);
-        let card = response.data.cards[0];
-        this.setState({
-            cards: [...this.state.cards, card]
-        })
+        try {
+            let url = `${API_BASE_URL}/${this.state.deckId}/draw`;
+            let response = await axios.get(url);
+            if (!response.data.success) {
+                throw new Error('No card reamining!');
+            }
+            let card = response.data.cards[0];
+            this.setState({
+                cards: [...this.state.cards, card]
+            });
+        } catch(err) {
+            alert(err);
+        }   
     }
     displayCards() {
         return this.state.cards.map(card => (
