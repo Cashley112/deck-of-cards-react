@@ -1,12 +1,11 @@
-.Deck h1 {
-    color: white;
+.Deck {
+    display: flex;
+    flex-flow: column-reverse;
 }
+
 .Deck button {
-    height: 3rem;
     width: 10rem;
-    font-size: 1.25em;
-    font-weight: 700;
-    border-radius: 5%;
-    border: none;
-    background-color: white;
+    height: 3.5rem;
+    margin: auto;
+    margin-bottom: 1.5rem;
 }

@@ -36,20 +36,24 @@ class Deck extends Component {
         }   
     }
     displayCards() {
-        return this.state.cards.map(card => (
-            <Card 
-                imgUrl={card.image}
-                key={card.code}
-                id={card.code}
-            />
-        ))
+        return 
     }
 
     render () {
+        const cards = 
+            this.state.cards.map(card => (
+                <Card 
+                    imgUrl={card.image}
+                    key={card.code}
+                    id={card.code}
+                />
+            ))
         return (
             <div className="Deck">
                 <h1>React Dice Demo</h1>
-                {this.displayCards()}
+                <div>
+                    {cards}
+                </div>
                 <button onClick={this.dealCard}>Gimme a Card!</button>
             </div>
         )
