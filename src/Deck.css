@@ -1,11 +1,6 @@
-.Deck {
-    display: flex;
-    flex-flow: column-reverse;
+.Deck h1 {
+    color: white;
 }
-
-.Deck button {
-    width: 10rem;
-    height: 3.5rem;
-    margin: auto;
-    margin-bottom: 1.5rem;
+.Deck-cardarea {
+    margin-top: 80px;
 }

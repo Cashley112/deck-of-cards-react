@@ -1,4 +1,5 @@
 .Card {
+    /* stack on top of eachother */
     position: absolute;
     left: 0;
     right: 0;
